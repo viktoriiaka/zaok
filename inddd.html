@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            background-color: khaki;
+        }
+        #div2{
+            background-color: rgb(243, 164, 118);
+        }
+        #div3{
+            background-color: rgb(102, 110, 223);
+        }
+        #div4{
+            background-color: rgb(167, 140, 240);
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <input type="number" step="any" id="pole">
+        <input type="submit" value="sprawdz" onclick="sprawdz()"/>
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <div id="div4"></div>
+    </body>
+</body>
+<script>
+ function sprawdz()
+{
+
+
+var wartosc=document.getElementById("pole").value;
+var liczba = parseFloat(wartosc);
+
+if (Number.isInteger(liczba)) {
+document.write("to jest liczba całkowita jesteś dziwny, bo po co to zaokrądlać");
+}
+else{
+    var rounder = Math.round(liczba);
+    document.getElementById('div1').innerHTML = `zaokronglenie do najbliższej całkowitwe: ${rounder} <br/><br/>`;
+   
+    var dol= Math.floor(liczba);
+    document.getElementById('div2').innerHTML = `zaokronglenie zawsze w dół: ${dol} <br/><br/>`;
+
+    var cel= Math.ceil(liczba);
+    document.getElementById('div3').innerHTML = `zaokronglenie zawsze w góre: ${cel} <br/><br/>`;
+
+    var tr= Math.trunc(liczba);
+    document.getElementById('div4').innerHTML = `usuwa część ułamkową.: ${tr} <br/><br/>`;
+} 
+}
+</script>
+</html>
